@@ -14,27 +14,27 @@ class StackTest < Minitest::Test
 
   def test_push_new_item
     @stack.push! 'scheme'
-    expected = ['ruby', 'php', 'java', 'scheme']
+    expected = %w[ruby php java scheme]
     given = @stack.to_a
     assert_equal expected, given
   end
 
-    def test_pop
-      @stack.pop!
-      expected = ['ruby', 'php']
-      given = @stack.to_a
-      assert_equal expected, given
-    end
+  def test_pop
+    @stack.pop!
+    expected = %w[ruby php]
+    given = @stack.to_a
+    assert_equal expected, given
+  end
 
-    def test_check_empiness
-      stack = Stack.new
-      assert stack.empty?
-    end
+  def test_check_emptiness
+    stack = Stack.new
+    assert stack.empty?
+  end
 
-    def test_clear
-      @stack.clear!
-      assert @stack.empty?
-    end
+  def test_clear
+    @stack.clear!
+    assert @stack.empty?
+  end
   # END
 end
 
