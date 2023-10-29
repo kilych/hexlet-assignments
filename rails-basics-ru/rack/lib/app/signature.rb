@@ -10,7 +10,7 @@ class Signature
   def call(env)
     # BEGIN
     status, headers, body = @app.call(env)
-    body << "\n" << Digest::SHA2.new(256).hexdigest(body.first)
+    body.push('</br>', Digest::SHA2.new(256).hexdigest(body.join))
     [status, headers, body]
     # END
   end
