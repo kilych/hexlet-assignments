@@ -12,7 +12,7 @@ class ExecutionTimer
 
     finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     elapsed = finish - start
-    body << "#{elapsed} seconds"
+    body << "\n#{elapsed} seconds"
 
     [status, headers, body]
   end
